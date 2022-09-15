@@ -1,9 +1,9 @@
-const { validate, join } = require ('express-validation');
+const { validate, Joi } = require ('express-validation');
 
 module.exports = validate ({
-    body: join.object({
-        paciente_id: join.number().required(),
-        data_atendimento: join.date().required(),
-        observacao: join.string().required(),
-    }),
-});
+    body: Joi.object({
+        paciente_id: Joi.number().required(),
+        data_atendimento: Joi.date().required(),
+        observacao: Joi.string().required(),
+    })
+})
